@@ -23,5 +23,15 @@
         android:layout_below="@+id/logOut"
         android:layout_marginTop="1dp" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="59dp"
+        android:layout_height="34dp"
+        android:layout_above="@+id/rvTweets"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="176dp"
+        android:layout_marginBottom="-1dp"
+        app:srcCompat="@drawable/twitter_logo_vector_png_clipart_1" />
+
 
 </RelativeLayout>
