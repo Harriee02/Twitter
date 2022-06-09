@@ -6,32 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".TimelineActivity">
 
-    <Button
-        android:id="@+id/logOut"
-        android:layout_width="55dp"
-        android:layout_height="32dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="3dp"
-        android:backgroundTint="#2196F3"
-        android:text="LOGOUT"
-        android:textSize="8sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvTweets"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/logOut"
-        android:layout_marginTop="1dp" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="59dp"
-        android:layout_height="34dp"
-        android:layout_above="@+id/rvTweets"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="176dp"
-        android:layout_marginBottom="-1dp"
-        app:srcCompat="@drawable/twitter_logo_vector_png_clipart_1" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTweets"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView2"-->
+<!--        android:layout_width="59dp"-->
+<!--        android:layout_height="34dp"-->
+<!--        android:layout_above="@+id/rvTweets"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginStart="176dp"-->
+<!--        android:layout_marginBottom="-1dp"-->
+<!--        app:srcCompat="@drawable/twitter_logo_vector_png_clipart_1" />-->
 
 
 </RelativeLayout>
