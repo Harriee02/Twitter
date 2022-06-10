@@ -2,7 +2,7 @@ package com.codepath.apps.restclienttemplate;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +23,7 @@ import java.util.List;
 public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
     Context context;
     List<Tweet> tweets;
+    public static final String TAG ="WORKS!";
 
     public void clear() {
         tweets.clear();
@@ -58,24 +59,29 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         return tweets.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivProfileImage;
         TextView tvScreenName;
         TextView tvBody;
         ImageView tweetImage;
         TextView tweetTime;
+        TextView screenName;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
-            tweetImage = itemView.findViewById(R.id.tweetImage);
+            screenName = itemView.findViewById(R.id.screenName);
+            tweetImage = itemView.findViewById(R.id.tweetPic);
             tweetTime = itemView.findViewById(R.id.tweetTime);
+            tweetImage.setClickable(true);
 
         }
         public void bind(Tweet tweet){
             tvBody.setText(tweet.body);
+            screenName.setText(tweet.user.name);
             tvScreenName.setText(tweet.user.screenName);// Experimenting with   changing the screenName to the created time but the text is not changing.
             //Where does
             Glide.with(context)
@@ -94,9 +100,22 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
                 tweetImage.setVisibility(View.GONE);
             }
             tweetTime.setText(tweet.getRelativeTimeAgo(tweet.createdAt));
+            tweetImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.i(TAG, "yay!");
+                    Intent imageDetail = new Intent(context, ImageDetail.class);
+                    imageDetail.putExtra(Tweet.class.getName(), Parcels.wrap(tweet));
+                    context.startActivity(imageDetail);
+                }
+            });
+
+
 
 
         }
+
+
     }
 
 

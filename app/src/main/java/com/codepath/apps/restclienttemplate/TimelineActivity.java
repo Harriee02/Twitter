@@ -33,7 +33,7 @@ import java.util.Locale;
 
 import okhttp3.Headers;
 
-public class TimelineActivity extends AppCompatActivity {
+public class TimelineActivity extends AppCompatActivity{
     private EndlessRecyclerViewScrollListener scrollListener;
 
     public static final String TAG="TimelineActivity";
@@ -43,6 +43,7 @@ public class TimelineActivity extends AppCompatActivity {
     RecyclerView rvTweets;
     List<Tweet> tweets;
     TweetAdapter adapter;
+    int max_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,6 +155,8 @@ public void fetchTimelineAsync(int page) {
         logOut.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // same as above
         startActivity(logOut);
     }
+
+
 
     private void populateHomeTimeline() {
         client.getHomeTimeline(new JsonHttpResponseHandler() {
