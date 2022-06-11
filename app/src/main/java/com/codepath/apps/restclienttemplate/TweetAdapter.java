@@ -20,10 +20,10 @@ import org.parceler.Parcels;
 
 import java.util.List;
 
-public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
+public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> {
     Context context;
     List<Tweet> tweets;
-    public static final String TAG ="WORKS!";
+    public static final String TAG = "WORKS!";
 
     public void clear() {
         tweets.clear();
@@ -36,7 +36,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         notifyDataSetChanged();
     }
 
-    public TweetAdapter(Context context, List<Tweet> tweets){
+    public TweetAdapter(Context context, List<Tweet> tweets) {
         this.context = context;
         this.tweets = tweets;
     }
@@ -79,7 +79,8 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
             tweetImage.setClickable(true);
 
         }
-        public void bind(Tweet tweet){
+
+        public void bind(Tweet tweet) {
             tvBody.setText(tweet.body);
             screenName.setText(tweet.user.name);
             tvScreenName.setText(tweet.user.screenName);// Experimenting with   changing the screenName to the created time but the text is not changing.
@@ -88,15 +89,14 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
                     .load(tweet.user.profileImageUrl)
                     .transform(new RoundedCorners(75))
                     .into(ivProfileImage);
-            if (!tweet.image.equals("")){
+            if (!tweet.image.equals("")) {
                 tweetImage.setVisibility(View.VISIBLE);
                 Glide.with(context)
                         .load(tweet.image)
                         .centerCrop()
                         .transform(new RoundedCorners(75))
                         .into(tweetImage);
-            }
-            else{
+            } else {
                 tweetImage.setVisibility(View.GONE);
             }
             tweetTime.setText(tweet.getRelativeTimeAgo(tweet.createdAt));
@@ -111,14 +111,10 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
             });
 
 
-
-
         }
 
 
     }
-
-
 
 
 }
