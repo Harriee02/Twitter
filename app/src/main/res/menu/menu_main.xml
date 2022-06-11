@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/compose"
+        android:icon="@drawable/ic_vector_compose"
+        android:title="Compose"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/logo"
+        android:icon="@drawable/twitter_logo_vector_png_clipart_1"
+        app:showAsAction="always"
+        android:title="twitterlogo" />
+
+    <item
+        android:id="@+id/logOut"
+        android:enabled="true"
+        android:title="logout"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComposeActivity">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="86dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="280">
+        <!--        app:counterOverflowTextAppearance="@style/counterOverride"-->
+        <!--        app:counterTextAppearance="@style/counterText">-->
+
+        <EditText
+            android:id="@+id/etCompose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="154dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="What's happening?.."
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColorHint="@android:color/holo_blue_light"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnTweet"
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="0dp"
+        android:backgroundTint="#2196F3"
+        android:text="@string/tweet" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="56dp"-->
+<!--        android:layout_height="41dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginStart="176dp"-->
+<!--        android:layout_marginEnd="181dp"-->
+<!--        app:srcCompat="@drawable/twitter_logo_vector_png_clipart_1" />-->
+
+</RelativeLayout>
